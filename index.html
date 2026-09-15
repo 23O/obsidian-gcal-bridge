@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Obsidian GCal Bridge</title>
+</head>
+<body>
+    <p>Authentication redirect in progress...</p>
+    <script>
+        // Google OAuth 리디렉션 토큰을 옵시디언 커스텀 프로토콜로 전달하는 스크립트
+        const hash = window.location.hash;
+        const search = window.location.search;
+        if (hash || search) {
+            window.location.href = "obsidian://google-calendar-sync" + hash + search;
+        }
+    </script>
+</body>
+</html>
