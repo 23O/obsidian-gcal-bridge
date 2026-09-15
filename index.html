@@ -2,15 +2,20 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Obsidian Google Calendar Bridge</title>
+    <title>Obsidian Google Sync Bridge</title>
 </head>
 <body>
-    <p>Authentication in progress...</p>
+    <p>Authentication in progress. Redirecting back to Obsidian...</p>
     <script>
+        // 현재 브라우저의 전체 URL에서 해시(#)와 쿼리(?) 파라미터를 그대로 가져옴
         const hash = window.location.hash;
         const search = window.location.search;
+        
+        // 플러그인의 정식 ID(google-sync)에 맞춘 정확한 URI로 토스
         if (hash || search) {
-            window.location.href = "obsidian://google-calendar-sync" + hash + search;
+            window.location.href = "obsidian://google-sync/oauth" + search + hash; 
+            // 만약 위 주소로도 반응이 없다면, 아래 주소로 바꿔서 시도해 보세요:
+            // window.location.href = "obsidian://google-sync" + search + hash;
         }
     </script>
 </body>
