@@ -13,7 +13,7 @@
         
         // 플러그인의 정식 ID(google-sync)에 맞춘 정확한 URI로 토스
         if (hash || search) {
-            window.location.href = "obsidian://google-sync/oauth" + search + hash; 
+            window.location.href = "obsidian://google-sync" + search + hash; 
             // 만약 위 주소로도 반응이 없다면, 아래 주소로 바꿔서 시도해 보세요:
             // window.location.href = "obsidian://google-sync" + search + hash;
         }
