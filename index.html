@@ -2,20 +2,17 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Google Calendar Bridge</title>
+    <title>Obsidian Google Sync Bridge</title>
 </head>
 <body>
-    <h3>Authentication in progress...</h3>
-    <p>You can close this window if it doesn't close automatically.</p>
+    <p>Authentication in progress. Redirecting to Obsidian...</p>
     <script>
-        // 구글 OAuth에서 전달된 쿼리 스트링과 해시값을 모두 포함하여 옵시디언 커스텀 프로토콜로 전달
-        const searchParams = window.location.search;
-        const hashParams = window.location.hash;
-        
-        // 플러그인이 대기 중인 옵시디언 URI 스킴으로 리다이렉트
-        const targetUrl = "obsidian://google-calendar" + searchParams + hashParams;
-        
-        window.location.href = targetUrl;
+        // 개발자 공식 저장소의 리디렉션 로직과 동일하게 파라미터를 옵시디언 스킴으로 전달
+        const hash = window.location.hash;
+        const search = window.location.search;
+        if (hash || search) {
+            window.location.href = "obsidian://google-calendar-sync" + hash + search;
+        }
     </script>
 </body>
 </html>
